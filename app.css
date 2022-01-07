@@ -1,0 +1,23 @@
+span.poke-type {
+    display: inline-block;
+}
+
+span.poke-type.water {
+    background-color: #78B6D9;
+}
+
+h1.example.water {
+    background-color: #78B6D9;
+}
+
+.fill-white {
+    fill: #fff;
+}
+
+.fill-red {
+    fill: #FF5740;
+}
+
+header {
+    background: #242424;
+}
