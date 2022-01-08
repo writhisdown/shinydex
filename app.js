@@ -3,9 +3,28 @@
 // create object with data you want
 // loop over only the 1st 151 pokemon
 
-const getPokemonData = async () => {
+const searchBar = document.getElementById('searchBar');
+const pokemonData = [];
+// let pokeDexResults = [];
 
-    const pokemonData = [];
+searchBar.addEventListener('keyup', (event) => {
+    console.log(event.target.value);
+
+    const searchEntry = event.target.value.toLowerCase();
+
+    const filteredPokemon = pokemonData.filter( (pokemonResult) => {
+        return (
+            pokemonResult.name.toLowerCase().includes(searchEntry) ||
+            pokemonResult.id == searchEntry ||
+            pokemonResult.type == searchEntry
+        )
+    });
+
+    displayPokemon(filteredPokemon);
+
+});
+
+const getPokemonData = async () => {
 
     for (let i = 1; i <= 151; i++) {
         const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
@@ -38,6 +57,8 @@ const getPokemonData = async () => {
 
         //console.log(pokemon);
 }
+
+
 
 const displayPokemon = (pokemon) => {
 
