@@ -17,10 +17,12 @@ searchBar.addEventListener('keyup', (event) => {
             pokemonResult.name.toLowerCase().includes(searchEntry) ||
             pokemonResult.id == searchEntry ||
             pokemonResult.type == searchEntry
-        )
+        );
     });
 
-    displayPokemon(filteredPokemon);
+    console.log(filteredPokemon);
+
+    // displayPokemon(filteredPokemon);
 
 });
 
