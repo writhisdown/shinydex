@@ -4,27 +4,8 @@
 // loop over only the 1st 151 pokemon
 
 const searchBar = document.getElementById('searchBar');
-const pokemonData = [];
-// let pokeDexResults = [];
-
-searchBar.addEventListener('keyup', (event) => {
-    console.log(event.target.value);
-
-    const searchEntry = event.target.value.toLowerCase();
-
-    const filteredPokemon = pokemonData.filter( (pokemonResult) => {
-        return (
-            pokemonResult.name.toLowerCase().includes(searchEntry) ||
-            pokemonResult.id == searchEntry ||
-            pokemonResult.type == searchEntry
-        );
-    });
-
-    console.log(filteredPokemon);
-
-    // displayPokemon(filteredPokemon);
-
-});
+let pokemonData = [];
+let pokemonResults = [];
 
 const getPokemonData = async () => {
 
@@ -45,19 +26,13 @@ const getPokemonData = async () => {
             type: data.types.map((type) => type.type.name)
         }));
 
+        pokemonResults.push(...pokemon);
         //console.log(pokemon);
         displayPokemon(pokemon);
+        //displayPokemon(filteredPokemon);
 
     });
 
-        // const pokemon = {
-        //     name: data.name,
-        //     id: data.id,
-        //     image: data.sprites['front_shiny'],
-        //     type: data.types.map((type) => type.type.name).join(', ')
-        // }
-
-        //console.log(pokemon);
 }
 
 
@@ -72,20 +47,11 @@ const displayPokemon = (pokemon) => {
 
     const pokeDexContainer = document.querySelector('.pokedex');
 
-    // const leadZero = (pokeId) => {
-    //     // return '0';
-    //     if (pokeId.length === 2) {
-    //         return `<span>0</span>`;
-    //     } 
-    //     if (pokeId.length === 1) {
-    //         return `<span>00</span>`;
-    //     } 
-    // }
-
     const generateHtml = (pokemon).map( (mon) => {
         return `
         <li class="poke-card">
             <image class="poke-image" src="${mon.image}" alt="${mon.name}"/>
+
             ${  
                 ( ids => {
 
@@ -101,64 +67,14 @@ const displayPokemon = (pokemon) => {
 
                 })(mon.id)
             }
-            <h1 class="poke-name">${mon.name}</h1>
-            ${mon.type.map( (types) => {
-                if (types == 'grass') {
-                    return `<span class="poke-type grass">${types}</span>`;
-                }
-                if (types == 'water') {
-                    return `<span class="poke-type water">${types}</span>`;
-                }
-                if (types == 'fire') {
-                    return `<span class="poke-type fire">${types}</span>`;
-                }
-                if (types == 'electric') {
-                    return `<span class="poke-type electric">${types}</span>`;
-                }
-                if (types == 'normal') {
-                    return `<span class="poke-type normal">${types}</span>`;
-                }
-                if (types == 'fighting') {
-                    return `<span class="poke-type fighting">${types}</span>`;
-                }
-                if (types == 'flying') {
-                    return `<span class="poke-type flying">${types}</span>`;
-                }
-                if (types == 'poison') {
-                    return `<span class="poke-type poison">${types}</span>`;
-                }
-                if (types == 'ground') {
-                    return `<span class="poke-type ground">${types}</span>`;
-                }
-                if (types == 'rock') {
-                    return `<span class="poke-type rock">${types}</span>`;
-                }
-                if (types == 'bug') {
-                    return `<span class="poke-type bug">${types}</span>`;
-                }
-                if (types == 'ghost') {
-                    return `<span class="poke-type ghost">${types}</span>`;
-                }
-                if (types == 'steel') {
-                    return `<span class="poke-type steel">${types}</span>`;
-                }
-                if (types == 'psychic') {
-                    return `<span class="poke-type psychic">${types}</span>`;
-                }
-                if (types == 'ice') {
-                    return `<span class="poke-type ice">${types}</span>`;
-                }
-                if (types == 'dragon') {
-                    return `<span class="poke-type dragon">${types}</span>`;
-                }
-                if (types == 'dark') {
-                    return `<span class="poke-type dark">${types}</span>`;
-                }
-                if (types == 'fairy') {
-                    return `<span class="poke-type fairy">${types}</span>`;
-                }
 
-            } ).join('')}
+            <h1 class="poke-name">${mon.name}</h1>
+
+            ${mon.type.map( (types) => {
+                    
+                return `<span class="poke-type ${types}">${types}</span>`;
+
+            }).join('')}
 
         </li>
         `
@@ -170,3 +86,36 @@ const displayPokemon = (pokemon) => {
 }
 
 getPokemonData();
+
+
+searchBar.addEventListener('keyup', (event) => {
+    console.log(event.target.value);
+
+    const searchEntry = event.target.value.toLowerCase();
+    const searchNumber = event.target.value;
+
+    const filteredPokemon = pokemonResults.filter( (mon) => {
+
+        // let pokemonType = mon.type.map( types => JSON.stringify(types));
+
+        // console.log(pokemonType);
+        return (
+            mon.name.toLowerCase().includes(searchEntry) ||
+            mon.id == searchNumber ||
+            JSON.stringify(mon.type).toLowerCase().includes(searchEntry)
+        );
+
+        // if (mon.name.toLowerCase().includes(searchEntry)) {
+        //     return mon.name;
+        // }
+        // if (mon.id == searchNumber) {
+        //     return mon.id;
+        // }
+        
+    });
+
+    console.log(filteredPokemon);
+
+    displayPokemon(filteredPokemon);
+
+});
