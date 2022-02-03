@@ -1,0 +1,29 @@
+@use 'sass:map';
+
+$weight: (
+    'light': 300,
+    'regular': 400,
+    'semi': 700,
+    'bold': 900
+);
+
+$size: (
+    'xsmall': .8125em,
+    'small': .875em,
+    'default': 1em,
+    'display': 1.5em
+);
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  
+  p {
+    margin-bottom: 1em;
+    
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+  }
