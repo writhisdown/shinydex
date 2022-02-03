@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.page-wrapper {
+    max-width: prop('wrapper');
+    height: prop('screen');
+    /*padding: 4em 1em;*/
+
+    &--padding {
+        padding: padding('xlarge') padding('default');
+    }
+}
+
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: gap('medium');
+
+    @include mq(mobile) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: gap('medium') gap('xmedium');
+    }
+
+    @include mq(tablet) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: gap('medium') gap('xmedium');
+    }
+
+    @include mq(laptop) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: gap('medium') gap('xmedium');
+    }
+
+    @include mq(desktop) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: gap('medium') gap('xmedium');
+    }
+
+}

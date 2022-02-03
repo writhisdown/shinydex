@@ -1,0 +1,42 @@
+@use 'sass:map';
+
+$padding: (
+    'xsmall': .25em,
+    'small': .5em,
+    'default': 1em,
+    'medium': 1.5em,
+    'large': 2.5em,
+    'xlarge': 4em,
+    'xxlarge': 8em,
+    'search': .5em .5em .5em 3em
+);
+
+$margins: (
+    'center': 0 auto,
+    'auto': auto, 
+    'xxsmall': .25em,
+    'xsmall': .5em,
+    'small': .75em,
+    'default': 1em,
+    'medium': 1.25em,
+    'xmedium': 2em,
+    'large': 4em,
+    'xlarge': 8em,
+    'xxlarge': 16em
+);
+
+$grid-gap: (
+    'small': .5em,
+    'default': 1em,
+    'xmedium': 2em,
+    'medium': 3.125em,
+    'large': 4em,
+    'xlarge': 5em,
+    'xxlarge': 6em
+);
+
+$props: (
+    'full': 100%,
+    'screen': 100vh,
+    'wrapper': 1440px
+);
