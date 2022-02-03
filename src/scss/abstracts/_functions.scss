@@ -1,0 +1,31 @@
+@use '../abstracts/colors' as *;
+@use '../base/typography' as *;
+@use '../layout/spacing' as *;
+
+@function base($key: 'grey') {
+    @return map-get($base-colors, $key);
+}
+
+@function padding($key: 'defualt') {
+    @return map-get($padding, $key);
+}
+
+@function margin($key: 'default') {
+    @return map-get($margins, $key);
+}
+
+@function gap($key: 'default') {
+    @return map-get($grid-gap, $key);
+}
+
+@function prop($key) {
+    @return map-get($props, $key);
+}
+
+@function size($key: 'default') {
+    @return map-get($size, $key);
+}
+
+@function weight($key: 'regular') {
+    @return map-get($weight, $key);
+}

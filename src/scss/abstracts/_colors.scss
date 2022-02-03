@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+$base-colors: (
+    'blue': #3E9AEE,
+    'red': #FF5740,
+    'yellow': #FFE040,
+    'black': #282828,
+    'white': #FFF,
+    'grey': #707070,
+    'background': #EEE,
+    'shadow': rgba(#707070, .25)
+);
+
+$poke-types: (
+    'ground': #DBC075,
+    'rock': #6A4206,
+    'grass': #94CAAD,
+    'fire': #E37842,
+    'water': #78B6D9,
+    'electric': #FFE040,
+    'flying': #BAABFF,
+    'dragon': #6B46FB,
+    'psychic': #AD83B5,
+    'ghost': #676DA4,
+    'poison': #AD54B5,
+    'steel': #E4E8F1,
+    'normal': #B6AF8E,
+    'ice': #A6D6D7,
+    'fighting': #B13D31,
+    'fairy': #E29DAC,
+    'bug': #89C015,
+    'dark': #32343C
+);
