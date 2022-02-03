@@ -4,8 +4,23 @@
   "description": "",
   "main": "scripts/app.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "dev": "NODE_ENV=dev parcel src/index.html",
+    "build": "NODE_ENV=prod parcel build src/index.html"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "assets",
+        "env": "dev"
+      },
+      {
+        "staticPath": "assets",
+        "env": "prod"
+      }
+    ]
+  },
+  "sass": { 
+    "includePaths": ["./node_modules"] 
   },
   "repository": {
     "type": "git",
@@ -21,6 +36,7 @@
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
     "parcel": "^2.2.1",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "sass": "^1.49.0"
   }
 }
