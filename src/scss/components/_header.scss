@@ -1,0 +1,78 @@
+@use '../abstracts' as *;
+
+.fill-white {
+    fill: base('white');
+}
+
+.fill-grey {
+    fill: base('grey');
+}
+
+.fill-red {
+    fill: base('red');
+}
+
+.masthead {
+    background: base('black');
+}
+
+.nav-wrapper {
+    padding: padding('default');
+    max-width: prop('wrapper');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include mq(mobile) {
+        flex-wrap: nowrap;
+    }
+}
+
+.logo__brand {
+    display: block;
+    max-width: 140px;
+    width: prop('full');
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: prop('full');
+    margin-top: margin('medium');
+    z-index: 100;
+    order: 1;
+    
+    & input {
+        border: none;
+        border-radius: 50px;
+        width: prop('full');
+        padding: padding('search');
+        background: base('white');
+    }
+
+    @include mq(mobile) {
+        order: 0;
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    @include mq(tablet) {
+        order: 0;
+        max-width: 450px;
+    }
+}
+
+.label-hidden {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.icon__search {
+    position: absolute;
+    width: 16px;
+    /*margin: 0 margin('xsmall');*/
+    left: .75em;
+}

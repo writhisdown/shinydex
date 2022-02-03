@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+@use '../layout' as *;
+
+.poke-card {
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    text-align: center;
+    border-radius: 20px;
+    /*min-width: 250px;*/
+    padding: padding('medium') 0;
+    /*height: 260px;*/
+    background: base('white');
+    -webkit-animation: fadeIn 800ms;
+            animation: fadeIn 800ms;
+
+    &:hover {
+        box-shadow: 2px 2px 12px base('shadow');
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.poke-id {
+    font-size: size('xsmall');
+    font-weight: weight('bold');
+    color: base('grey');
+
+    &::before {
+        content: '#';
+    }
+}
+
+.poke-name {
+    font-size: size('display');
+    font-weight: weight('bold');
+    text-transform: capitalize;
+    line-height: size('default');
+    margin-top: margin('xsmall');
+    margin-bottom: margin('medium');
+}
+
+@each $poke-types, $type in $poke-types {
+    .poke-type.#{$poke-types} {
+        background: $type;
+    }
+}
+
+.poke-type.dragon, .poke-type.dark, .poke-type.fighting,
+.poke-type.poison, .poke-type.ghost, .poke-type.rock {
+    color: base('white');
+}
+
+span.poke-type {
+    display: inline-flex;
+    align-items: center;
+    font-size: size('small');
+    font-weight: weight('semi');
+    line-height: size('small');
+    height: 25px;
+    margin-right: .5em;
+    padding: 0 12px;
+    border-radius: 8px;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
