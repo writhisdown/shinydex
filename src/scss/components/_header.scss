@@ -76,3 +76,19 @@
     /*margin: 0 margin('xsmall');*/
     left: .75em;
 }
+
+.btn__clear {
+    position: absolute;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    right: .5em;
+    cursor: pointer;
+    display: none;
+}
+
+.visible {
+    display: block;
+}
