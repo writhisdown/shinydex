@@ -26,6 +26,7 @@ const getPokemonData = async () => {
             name: data.name,
             id: data.id,
             image: data.sprites['front_shiny'],
+            image_alt: data.sprites['front_default'],
             type: data.types.map((type) => type.type.name)
         }));
 
@@ -53,7 +54,8 @@ const displayPokemon = (pokemon) => {
     const generateHtml = (pokemon).map( (mon) => {
         return `
         <li class="poke-card">
-            <image class="poke-image" src="${mon.image}" alt="${mon.name}"/>
+            <image class="poke-image--shiny" src="${mon.image}" alt="${mon.name}"/>
+            <image class="poke-image" src="${mon.image_alt}" alt="${mon.name}"/>
 
             ${  
                 ( ids => {
