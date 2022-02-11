@@ -2,10 +2,16 @@
 
 import {pokemonResults, displayPokemon} from './pokemon';
 
-const searchPokeDex = () => {
+//reference search input element
+const searchBar = document.getElementById('searchBar');
 
-    //reference search input element
-    const searchBar = document.getElementById('searchBar');
+//reference search form element
+const searchForm = document.getElementById('search');
+
+// reference clear button
+const clearBtn = document.getElementById('clearBtn');
+
+const searchPokeDex = () => {
 
     //add event listener for search bar on key up
     searchBar.addEventListener('keyup', (event) => {
@@ -32,8 +38,26 @@ const searchPokeDex = () => {
         //display the list of filtered pokemon
         displayPokemon(filteredPokemon);
 
+        controlBtn();
+
     });
 
 }
 
-export {searchPokeDex}
+//handle clear button visibility
+const controlBtn = () => {
+    clearBtn.classList.add('visible');
+
+    if (searchBar.value.trim().length === 0) {
+        clearBtn.classList.remove('visible');
+    } 
+    //console.log(searchBar.value);
+}
+
+//hide clear button and reset input
+const clearSearch = () => {
+    clearBtn.classList.remove('visible');
+    searchForm.reset();
+}
+
+export {clearBtn, clearSearch, searchPokeDex}
