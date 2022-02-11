@@ -10,12 +10,21 @@
     /*min-width: 250px;*/
     padding: padding('medium') 0;
     /*height: 260px;*/
+    cursor: pointer;
     background: base('white');
     -webkit-animation: fadeIn 800ms;
             animation: fadeIn 800ms;
 
     &:hover {
         box-shadow: 2px 2px 12px base('shadow');
+    }
+
+    &:hover .poke-image {
+        display: inline-block;
+    }
+
+    &:hover .poke-image--shiny {
+        display: none;
     }
 }
 
@@ -27,6 +36,10 @@
 @keyframes fadeIn {
     0% {opacity:0;}
     100% {opacity:1;}
+}
+
+.poke-image {
+    display: none;
 }
 
 .poke-id {
