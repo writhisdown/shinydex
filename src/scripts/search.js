@@ -14,7 +14,7 @@ const clearBtn = document.getElementById('clearBtn');
 const searchPokeDex = () => {
 
     //add event listener for search bar on key up
-    searchBar.addEventListener('keyup', (event) => {
+    searchBar.addEventListener('input', (event) => {
         console.log(event.target.value);
 
         //reference input string value from a user
@@ -57,7 +57,8 @@ const controlBtn = () => {
 //hide clear button and reset input
 const clearSearch = () => {
     clearBtn.classList.remove('visible');
-    searchForm.reset();
+    searchBar.value = '';
+    searchBar.dispatchEvent(new Event('input', {bubbles:true}));
 }
 
 export {clearBtn, clearSearch, searchPokeDex}
