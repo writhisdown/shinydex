@@ -43,6 +43,10 @@
     margin-top: margin('medium');
     z-index: 100;
     order: 1;
+
+    // &:focus-within {
+    //     border: 1px solid blue;
+    // }
     
     & input {
         border: none;
