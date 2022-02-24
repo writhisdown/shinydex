@@ -2,11 +2,13 @@
 
 .page-wrapper {
     max-width: prop('wrapper');
-    height: prop('screen');
+    position: relative;
+    z-index: 10;
+    // height: prop('screen');
     /*padding: 4em 1em;*/
 
     &--padding {
-        padding: padding('xlarge') padding('default');
+        padding: padding('xxlarge') padding('default');
     }
 }
 
