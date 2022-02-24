@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.footer {
+    background: base('black');
+    width: 100%;
+    color: base('white');
+}
+
+.footer-wrapper {
+    padding: padding('default');
+    max-width: prop('wrapper');
+    text-align: center;
+}
+
