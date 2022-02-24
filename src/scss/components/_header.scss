@@ -13,7 +13,11 @@
 }
 
 .masthead {
+    position: fixed;
     background: base('black');
+    width: 100%;
+    box-shadow: 1px 4px 12px base('shadow');
+    z-index: 100;
 }
 
 .nav-wrapper {
@@ -41,7 +45,7 @@
     align-items: center;
     width: prop('full');
     margin-top: margin('medium');
-    z-index: 100;
+    z-index: 1000;
     order: 1;
 
     // &:focus-within {
@@ -81,13 +85,21 @@
     left: .75em;
 }
 
+.input__search:focus {
+     outline: 1px solid base('blue');
+}
+
+.input__search:focus-visible {
+    outline: 3px solid base('blue');
+}
+
 .btn__clear {
     position: absolute;
     border: none;
     background: none;
     padding: 0;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     right: .5em;
     cursor: pointer;
     display: none;
