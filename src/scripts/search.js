@@ -15,7 +15,7 @@ const searchPokeDex = () => {
 
     //add event listener for search bar on key up
     searchBar.addEventListener('input', (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
 
         //reference input string value from a user
         const searchString = event.target.value.toLowerCase();
@@ -33,7 +33,7 @@ const searchPokeDex = () => {
             
         });
 
-        console.log(filteredPokemon);
+        // console.log(filteredPokemon);
 
         //display the list of filtered pokemon
         displayPokemon(filteredPokemon);
