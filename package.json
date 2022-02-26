@@ -2,7 +2,6 @@
   "name": "pokemon",
   "version": "1.0.0",
   "description": "",
-  "main": "scripts/app.js",
   "scripts": {
     "dev": "NODE_ENV=dev parcel src/index.html",
     "build": "NODE_ENV=prod parcel build src/index.html"
