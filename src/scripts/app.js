@@ -10,6 +10,4 @@ searchPokeDex();
 
 clearBtn.addEventListener('click', clearSearch);
 
-// dateWrapper.addEventListener('DOMContentLoaded', displayDate);
-
 displayDate();
