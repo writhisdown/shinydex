@@ -45,7 +45,7 @@ const getPokemonData = async () => {
 //function creates an HTML list item for each pokemon
 const displayPokemon = (pokemon) => {
 
-    console.log(pokemon);
+    // console.log(pokemon);
 
     //reference unordered list element
     const pokeDexContainer = document.querySelector('.pokedex');
@@ -89,7 +89,5 @@ const displayPokemon = (pokemon) => {
     pokeDexContainer.innerHTML = generateHtml;
      // console.log(generateHtml);
 }
-
-// getPokemonData();
 
 export {pokemonResults, getPokemonData, displayPokemon}
