@@ -1,4 +1,4 @@
-# ShinyDX.com
+# ShinyDX.com [Shiineee-Dex]
 
 **A collection of the first 151 Pokemon, in their shiny form – built with the Poke API, Vanilla JS, SASS, and Parcel Bundler.**
 
