@@ -70,6 +70,11 @@
         order: 0;
         max-width: 450px;
     }
+
+    @include mq(laptop) {
+        order: 0;
+        max-width: 550px;
+    }
 }
 
 .label-hidden {
