@@ -27,4 +27,4 @@
 
 ## License
 
-MIT
+**MIT**
