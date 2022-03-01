@@ -18,7 +18,7 @@
 
 ## Links
 
-- [shinydx.com](https://www.example.com)
+- [shinydx.com](http://shinydx.com/)
 - [Poke API](https://pokeapi.co/)
 - [Font Awesome SVGs](https://fontawesome.com/icons)
 - [Parcel Bundler](https://parceljs.org/)
